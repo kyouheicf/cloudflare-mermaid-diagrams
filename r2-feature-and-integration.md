@@ -42,7 +42,7 @@ Sippy["Sippy<br>(incremental migration)"]
 Slurper["Super Slurper<br>(one-time migration)"]
 R2DEV[xxx.r2.dev]
 Custom[Custom Domains]
-presigned[Presigned URLs]
+presigned["Presigned URLs<br>(xxx.r2.cloudflarestorage.com)"]
 S3API["S3 API<br>(xxx.r2.cloudflarestorage.com)"]
 end
 end
@@ -76,5 +76,4 @@ Domain --> Workers
 Public --> Workers ----> |Binding|R2Bucket
 
 Logpush -----> |Zero Trust Network Session Logs,<br>HTTP Requests Logs, etc.|R2Bucket
-
 ```
