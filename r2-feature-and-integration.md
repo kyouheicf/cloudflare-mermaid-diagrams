@@ -12,6 +12,8 @@ Access[<a href='https://developers.cloudflare.com/r2/examples/cloudflare-access/
 Caching[<a href='https://developers.cloudflare.com/r2/buckets/public-buckets/#caching'>Caching</a>]
 end
 end
+WDEV[xxx.workers.dev]
+PDEV[xxx.pages.dev]
 Logpush[<a href='https://developers.cloudflare.com/logs/get-started/enable-destinations/r2/'>Logpush</a>]
 LE[<a href='https://developers.cloudflare.com/logs/log-explorer/'>Log Explorer</a>]
 Token[<a href='https://developers.cloudflare.com/r2/api/s3/tokens/'>R2 API Token</a>]
@@ -74,8 +76,9 @@ Public --> |Temporary<br>and<br>Conditional<br>Access|presigned --- R2Bucket
 
 Public --> |Allow Access|R2DEV --- R2Bucket
 Public[Public Access] --> Domain ----- Custom --- R2Bucket
-Domain --> Workers
-Public --> Workers ----> |Binding|R2Bucket
+Domain --> |Workers Routes<br>or<br>Pages Functions|Workers
+Public --> WDEV --> Workers ----> |Binding|R2Bucket
+Public --> PDEV --> |Pages Functions|Workers
+Logpush ----> |Zero Trust Network Session Logs,<br>HTTP Requests Logs, etc.|R2Bucket
 
-Logpush -----> |Zero Trust Network Session Logs,<br>HTTP Requests Logs, etc.|R2Bucket
 ```
