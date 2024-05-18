@@ -79,6 +79,6 @@ Public[Public Access] --> Domain ----- Custom --- R2Bucket
 Domain --> |Workers Routes<br>or<br>Pages Functions|Workers
 Public --> WDEV --> Workers ----> |Binding|R2Bucket
 Public --> PDEV --> |Pages Functions|Workers
-Logpush ----> |Zero Trust Network Session Logs,<br>HTTP Requests Logs, etc.|R2Bucket
+Logpush --> |Zero Trust Network Session Logs,<br>HTTP Requests Logs, etc.|R2Bucket
 
 ```
