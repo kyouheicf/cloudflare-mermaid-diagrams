@@ -4,6 +4,7 @@ graph TB
 subgraph Cloudflare
 subgraph Workers
 CacheAPI[<a href='https://developers.cloudflare.com/r2/examples/cache-api/'>Cache API</a>]
+IR[<a href='https://developers.cloudflare.com/images/transform-images/'>Transform images</a>]
 end
 subgraph Websites
 subgraph Domain[Zone]
