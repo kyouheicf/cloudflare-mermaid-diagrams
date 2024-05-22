@@ -22,10 +22,12 @@ File
 end
 
 subgraph Cloudflare
-  subgraph Gateway [Gateway TLS decryption]
-    subgraph transit [Inspect data in transit]
-      HTTPPolicies[HTTP Policies]
-    end
+  subgraph Gateway ["Gateway TLS decryption (Inspect data in transit)"]
+    %%subgraph transit [Inspect data in transit]
+      subgraph HTTPPolicies["HTTP Policies"]
+        PayloadLogging[Payload Logging]
+      end
+    %%end
   end
   subgraph DLP [DLP Profiles]
     subgraph Entries [Detection Entries]
