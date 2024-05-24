@@ -75,11 +75,14 @@ cli[<a href='https://developers.cloudflare.com/r2/examples/aws/aws-cli/'>aws CLI
 Token -..-> |Generate|presigned
 Public --> |Temporary<br>and<br>Conditional<br>Access|presigned --- R2Bucket
 
-Public --> |Allow Access|R2DEV --- R2Bucket
+WDEV --> Workers ----> |Binding|R2Bucket
+Public --> PDEV --> |Pages Functions|Workers
 Public[Public Access] --> Domain ----- Custom --- R2Bucket
 Domain --> |Workers Routes<br>or<br>Pages Functions|Workers
-Public --> WDEV --> Workers ----> |Binding|R2Bucket
-Public --> PDEV --> |Pages Functions|Workers
+Public --> WDEV
+
+Workers --> |fetch & cache.put|presigned
+Public --> |Allow Access|R2DEV --- R2Bucket
 Logpush --> |Zero Trust Network Session Logs,<br>HTTP Requests Logs, etc.|R2Bucket
 
 ```
